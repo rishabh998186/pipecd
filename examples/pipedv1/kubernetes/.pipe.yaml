@@ -1,0 +1,19 @@
+apiVersion: pipecd.dev/v1beta1
+kind: Application
+spec:
+  name: simple-k8s-app
+  labels:
+    env: example
+    team: platform
+  
+  plugins:
+    kubernetes:
+      input:
+        kubectlVersion: 1.33.0
+        manifests:
+          - deployment.yaml
+          - service.yaml
+      deployTargets:
+        - name: kind-cluster
+          labels:
+            env: example
