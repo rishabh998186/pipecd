@@ -10,10 +10,3 @@ spec:
     kubernetes:
       input:
         kubectlVersion: 1.33.0
-        manifests:
-          - deployment.yaml
-          - service.yaml
-      deployTargets:
-        - name: kind-cluster
-          labels:
-            env: example
